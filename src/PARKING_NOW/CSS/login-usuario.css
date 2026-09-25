@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #f1faff;
+    color: #0d2947;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.encabezado{
+    background-color: white;
+    padding: 20px 35px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+}
+
+.encabezado img{
+    width: 290px;
+    border-radius: 25px;
+}
+
+.registro{
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.informacion{
+    width: 50%;
+    padding: 45px;
+    background: #e4f7fc;
+    border-radius: 30px;
+}
+
+.formulario{
+    width: 50%;
+    padding: 45px;
+    background: white;
+    border-radius: 30px;
+}
+
+.registro{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.registro img{
+    width: 80%;
+    max-width: 430px;
+    border-radius: 25px;
+}
+
+.informacion h2{
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.informacion span{
+    color: #27b6d8;
+} 
+
+.informacion > p{
+    font-size: 15px;
+    line-height: 1.5;
+    color: #526579;
+}
+
+.beneficios{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+
+}
+
+.beneficio{
+    text-align: center;
+    flex: 1;
+}
+
+.beneficio span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 8px;
+    background: white;
+    color: #008db5;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.beneficio p{
+    font-size: 13px;
+    color: #526579;
+}
+
+.formulario{
+    width: 50%;
+    padding: 45px;
+    background: white;
+    border-radius: 30px;
+}
+
+.formulario h1{
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.formulario h1 span{
+    color: #27b6d8;
+}
+
+.descripcion{
+    color: #526579;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.campo{
+    margin-bottom: 18px;
+}
+
+.campo label{
+    display: block;
+    text-align: left;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.campo input{
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #c8e5ee;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.campo  input:focus{
+    border-color: #27b6d8;
+}
+.campo select{
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #c8e5ee;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.campo-contraseña{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border: 1px solid #c8e5ee;
+    border-radius: 12px;
+    background: white;
+    box-sizing: border-box;
+}
+
+.campo-contraseña input{
+    flex: 1;
+    width: auto;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background: transparent;
+}
+
+.campo-contrasena i{
+    color: #27b6d8;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button{
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    background: #27b6d8;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #008db5;
+}
+
+.ya-cuenta {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #526579;
+}
+
+.ya-cuenta a {
+    color: #27b6d8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.ya-cuenta a:hover {
+    color: #008db5;
+}
+
+footer{
+    margin-top: 25px;
+    padding: 25px 35px;
+    background: #0d2947;
+    color: white;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.contenido-footer{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.redes-sociales a{
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+
+}
+
+.redes-sociales a:hover {
+  color: #00a8cc;
+}
+
+.footer-logo img{
+    width: 150px;
+
+}
+
+.footer-logo p{
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.derechos{
+    font-size: 12px;
+}

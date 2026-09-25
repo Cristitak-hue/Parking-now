@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/LOGO1.1.png" type="image/x-icon">
+    <title>Inicio Parking-now</title>
+    <link rel="stylesheet" href="/CSS/Dashboard_usuario.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="/Index.html" class="logo-link"><img src="/images/Logo_parkingnow.png" alt="" class="Parking-now"></a>
+        <div class="right">
+            <div class="notificacion">
+                <i class="fa-solid fa-bell"></i>
+                <span class="insignia">2</span>
+            </div>
+            <div class="perfil">
+                <div class="avatar-initials">CM</div>
+                <div class="texto-perfil">
+                    <span class="nombre">Cristian Moreno</span>
+                    <span class="rol">Cliente </span>                    
+                </div>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+    <div class="mid">
+        <aside class="sidebar">
+            <ul>
+                <li><button class="nav activo">Inicio</button></li>
+                <li><button class="nav">Reservar Parqueadero</button></li>
+                <li><button class="nav">Mis reservas</button></li>
+                <li><button class="nav">Parqueadero</button></li>
+                <li><button class="nav">Historial</button></li>
+                <li><button class="nav">Mi perfil</button></li>
+                <li><button class="nav">Cerrar Sesión</button></li>
+            </ul>
+            <div class="sidebar-footer">
+                <img src="/images/Sidebarsinfondo.png" alt="" class="ciudad">
+                <p class="text-footer">Tu parqueadero ideal,</p>
+                <p style="color: #00CFE8;" class="text-footer">siempre cerca</p>
+            </div>
+        </aside>
+        <main class="inicio">
+            <div class="principal">
+                <div class="saludo">
+                    <h1>Hola Cristian &#128075;</h1>
+                    <h2>¿Dónde quieres parquear hoy?</h2>
+                </div>
+                <div class="search"> 
+                    <form>
+                        <h3><i class="fa-solid fa-magnifying-glass"></i> Buscar Parqueadero</h3>
+                        <div class="filtros">
+                            <div class="arriba">
+                                <div class="input-group">
+                                <i class="fa-solid fa-location-dot icon-left"></i>
+                                <label for="zona">Ubicación</label>
+                                <select name="" id="zona">
+                                    <option value="Selecciona una Zona" disabled selected>Selecciona una Zona</option>
+                                    <option value="Chapinero">Chapinero</option>
+                                    <option value="Suba">Suba</option>
+                                </select>
+                                </div>
+                                <div class="input-group">
+                                    <i class="fa-solid fa-square-parking"></i>
+                                    <label for="parqueadero">Parqueadero</label>
+                                    <select name="" id="parqueadero">
+                                        <option value="" disabled selected>Selecciona un Parqueadero</option>
+                                        <option value="">Parqueadero Don Rafa</option>
+                                        <option value="">Parqueadero Don Rafa 2</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <i class="fa-solid fa-car"></i>
+                                    <label for="Vehiculo">Vehiculo</label>
+                                    <select name="" id="Vehiculo">
+                                        <option value="" disabled selected> Selecciona un Vehículo</option>
+                                        <option value="">lamborghini Urus 2020</option>
+                                        <option value="">Chevrolet Beat 2021</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="abajo">
+                                <div class="tipo-vehiculo">
+                                    <p>Tipo de Vehículo</p>
+                                    <input type="radio" id="carro" name="tipo-vehiculo" value="Carro">
+                                    <label for="carro"><i class="fa-solid fa-car"></i> Carro</label>
+                                    <input type="radio" id="moto" name="tipo-vehiculo" value="Moto">
+                                    <label for="carro"><i class="fa-solid fa-motorcycle"></i> Moto</label>
+                                </div>
+                                <div class="tipo-vehiculo">
+                                    <label for="hora-entrada">Hora</label>
+                                    <input type="time" id="hora-entrada" name="hora-entrada">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-buscar">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                Buscar Disponibilidad
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="location">
+                    <div class="Disponibilidad">
+                        <h3><i class="fa-solid fa-location-pin"></i> Disponibilidad en Tiempo Real</h3>
+                        <a href="" class="mapa-completo">Ver mapa completo <i class="fa-solid fa-circle-arrow-right"></i></a>
+                    </div>
+                    <div class="parking">
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1645.3724594231649!2d-74.06339388856814!3d4.652049657432905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a45d66a83a7%3A0x1f94d872e1550245!2sAgencia%20P%C3%BAblica%20de%20Empleo%20SENA%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1790037814592!5m2!1ses!2sco" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
+                        </div>
+                        <div class="parking-lot">
+                            <ul>
+                                <li class="lot">
+                                    <h5>Parqueadero calle 68</h5> 
+                                    <p>5 cupos disponibles</p> 
+                                    <p>1.2 Km</p>
+                                </li>
+                                <li class="lot">
+                                    <h5>Parqueadero Chapinero</h5> 
+                                    <p>5 cupos disponibles</p> 
+                                    <p>1.2 Km</p>
+                                </li>
+                                <li class="lot">
+                                    <h5>Parqueadero Rafa</h5> 
+                                    <p>5 cupos disponibles</p>
+                                    <p>1.2 Km</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="side-derecho">
+                <div class="reserva-activa">
+    <h3><i class="fa-solid fa-file-invoice"></i> Reserva activa</h3>
+                    <div class="estado-reserva">
+                        <i class="fa-solid fa-car"></i>
+                        <span class="badge-confirmada">Confirmada</span>
+                    </div>
+                
+                    <div class="dato-reserva">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <p class="dato-label">Parqueadero</p>
+                            <p class="dato-valor">Parqueadero Calle 68</p>
+                        </div>
+                    </div>
+                
+                    <div class="dato-reserva">
+                        <i class="fa-solid fa-id-card"></i>
+                        <div>
+                            <p class="dato-label">Placa</p>
+                            <p class="dato-valor">ABC123</p>
+                        </div>
+                    </div>
+                
+                    <div class="dato-reserva">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <p class="dato-label">Entrada</p>
+                            <p class="dato-valor">3:00 p.m.</p>
+                        </div>
+                    </div>
+                
+                    <div class="dato-reserva">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <p class="dato-label">Salida</p>
+                            <p class="dato-valor">5:00 p.m.</p>
+                        </div>
+                    </div>
+                
+                    <div class="botones-reserva">
+                        <button class="btn-detalles">Ver detalles</button>
+                        <button class="btn-cancelar">Cancelar reserva</button>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+</body>
+</html>
