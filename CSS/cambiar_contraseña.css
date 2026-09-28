@@ -1,0 +1,303 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #f1faff;
+    color: #0d2947;
+}
+
+/* contenido principal*/
+
+.contenedor{
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/*logo*/
+
+.encabezado{
+    background: white;
+    padding: 20px 35px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+
+}
+
+.encabezado img{
+    width: 290px;
+    border-radius: 25px;
+}
+
+/*contenido*/
+.recuperacion{
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* parte de la izquierda*/
+.informacion {
+    width: 50%;
+    padding: 35px;
+    background: #e4f7fc;
+    border-radius: 30px;
+}
+
+/*imagen*/
+.imagen-contenedor {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.imagen-contenedor img {
+    width: 80%;
+    max-width: 430px;
+    border-radius: 25px;
+}
+
+/*Texto de la izquierda*/
+
+.informacion h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.informacion h2 span {
+    color: #27b6d8;
+}
+
+.informacion p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/*beneficios*/
+
+.beneficios {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.beneficio {
+    text-align: center;
+    flex: 1;
+}
+
+.beneficio span {
+    display: block;
+    margin: auto;
+    margin-bottom: 8px;
+
+    width: 45px;
+    height: 45px;
+
+    background: white;
+    color: #008db5;
+
+    border-radius: 50%;
+
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.beneficio p {
+    font-size: 14px;
+}
+
+/*formulario*/
+.formulario{
+    width: 50%;
+    background: white;
+    padding: 45px;
+    border-radius: 30px;
+}
+
+.campo{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.campo > i:first-child {
+    color: #0d2947;
+    margin-right: 10px;
+}
+
+.campo input{
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.campo > i:last-child {
+    color: #0d2947;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+.volver {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Poppins' sans-serif;
+  gap: 15px;
+}
+
+.flecha {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 40px;
+height: 40px;
+color:#008db5 ;
+border: 2px solid #27b6d8;
+font-size: 14px;
+font-weight: bold;
+border-radius: 50%; 
+}
+
+.flecha:hover {
+    background: #27b6d8;
+    color: white;
+}
+
+.texto{
+color: #27b6d8;
+font-size: 12px;
+font-weight: 500;
+}
+
+
+
+/*titulo*/
+
+.formulario h1{
+    font-size: 40px;
+    line-height: 1.2;
+    margin-top: 45px;
+    margin-bottom: 30px;
+}
+
+/*descripcion*/
+
+.descripcion{
+    color: #526579;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+
+}
+
+label{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+
+/*boton*/
+
+button{
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+    border: none;
+    border-radius: 25px;
+    background: #27b6d8;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
+/*esto es para que cuando el mouse se ponga en el boton cambie su color sutilmente*/
+button:hover {
+    background: #008db5;
+}
+
+/* volver al inicio de sesion*/
+.volver-login{
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+    color: #27b6d8;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 12px;
+    border: solid 1px;
+    border-radius: 25px;
+    background: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+.volver-login:hover {
+    background: #27b6d8;
+    color: white;
+}
+
+
+/*footer*/
+footer{
+    margin-top: 25px;
+    padding: 25px 35px;
+    background: #0d2947;
+    color: white;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.contenido-footer{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.redes-sociales a{
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+
+}
+
+.redes-sociales a:hover {
+  color: #00a8cc;
+}
+
+.footer-logo img{
+    width: 150px;
+
+}
+
+.footer-logo p{
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.derechos{
+    font-size: 12px;
+}
