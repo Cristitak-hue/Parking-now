@@ -18,6 +18,19 @@
             <div class="notificacion">
                 <i class="fa-solid fa-bell"></i>
                 <span class="insignia">2</span>
+                <div class="panel-notificaciones oculto">
+                    <h4>Notificaciones</h4>
+                    <ul>
+                        <li class="notif-item">
+                            <p class="notif-titulo">Reserva Confirmada</p>
+                            <p class="notif-texto">Tu reserva en parqueadero en calle 68</p>
+                        </li>
+                        <li class="notif-item">
+                            <p class="notif-titulo">Recordatorio</p>
+                            <p class="notif-texto">Tu reserva termina en 30 minutos</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="perfil">
                 <div class="avatar-initials">CM</div>
@@ -26,6 +39,16 @@
                     <span class="rol">Cliente </span>                    
                 </div>
                 <i class="fa-solid fa-chevron-down"></i>
+                <div class="panel-sesion oculto">
+                    <ul>
+                        <li class="perfil-button">
+                            <a href="" class="perfil-texto"><p>Mi cuenta <i class="fa-solid fa-circle-user"></i></p></a>
+                        </li>
+                        <li class="perfil-button">
+                            <a href="/Login-usuario.html" class="perfil-texto"><p>Cerrar Sesion <i class="fa-solid fa-arrow-right-from-bracket"></i></p></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
@@ -38,7 +61,6 @@
                 <li><button class="nav">Parqueadero</button></li>
                 <li><button class="nav">Historial</button></li>
                 <li><button class="nav">Mi perfil</button></li>
-                <li><button class="nav">Cerrar Sesión</button></li>
             </ul>
             <div class="sidebar-footer">
                 <img src="/images/Sidebarsinfondo.png" alt="" class="ciudad">
@@ -93,7 +115,7 @@
                                     <input type="radio" id="moto" name="tipo-vehiculo" value="Moto">
                                     <label for="carro"><i class="fa-solid fa-motorcycle"></i> Moto</label>
                                 </div>
-                                <div class="tipo-vehiculo">
+                                <div class="input-group">
                                     <label for="hora-entrada">Hora</label>
                                     <input type="time" id="hora-entrada" name="hora-entrada">
                                 </div>
@@ -184,5 +206,6 @@
             </aside>
         </main>
     </div>
+    <script src="/Javascript/Dashboard_usuario.js"></script>
 </body>
 </html>
