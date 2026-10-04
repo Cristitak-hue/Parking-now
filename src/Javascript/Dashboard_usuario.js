@@ -1,7 +1,12 @@
 /*Definicion de clases en JS */
 const notificacionBtn = document.querySelector('.notificacion i');
 const panelNotificaciones = document.querySelector('.panel-notificaciones')
+const perfilBtn = document.querySelector('.perfil');
 const panelsesionBtn = document.querySelector('.panel-sesion')
+const selectVehiculo = document.getElementById('Vehiculo')
+const modalVehiculo = document.getElementById('modalVehiculo')
+const cerrarModalBtn = document.getElementById('cerrarModal');
+const formVehiculo = document.getElementById('formVehiculo');
 /* Evento de mostrar notificaciones al momento de oprimir la campanita */
 notificacionBtn.addEventListener ('click', function(evento)   {
     evento.stopPropagation();
@@ -20,7 +25,8 @@ document.addEventListener('keydown', function(evento){
     }
 });
 /*Mostrar opciones de cuenta */
-panelsesionBtn.addEventListener('click', function(evento){
+perfilBtn.addEventListener('click', function(evento){
+    evento.stopPropagation();
     panelsesionBtn.classList.toggle('oculto')
 });
 /* Hacer que se salga cuando hace un click afuera*/
@@ -29,4 +35,45 @@ document.addEventListener('click', function(evento){
         panelsesionBtn.classList.add('oculto')
     }
 });
+/*cuando se elige la opcion + vehiculo */
+selectVehiculo.addEventListener('change', function(evento){
+    if (evento.target.value === 'agregar') {
+        modalVehiculo.classList.remove('oculto');
+        selectVehiculo.value = '';
+    }
+});
+function cerrarModal(){
+    modalVehiculo.classList.add('oculto');
+}
+cerrarModalBtn.addEventListener('click', cerrarModal);
 
+modalVehiculo.addEventListener('click', function(evento){
+    if (evento.tarjet === modalVehiculo) {
+        cerrarModal();
+    }
+});
+document.addEventListener('keydown', function(evento){
+    if (evento.key === 'Escape') {
+        cerrarModal();
+    }
+});
+formVehiculo.addEventListener('submit', function(evento){
+    evento.preventDefault();
+
+    const tipoSeleccionado = document.querySelector('input[name="tipo-vehiculo"]:checked').value;
+    const marca = document.getElementById('marca').value;
+    const modelo = document.getElementById('modelo').value;
+    const anio = document.getElementById('anio').value;
+    const placa = document.getElementById('placa').value;
+    const color = document.getElementById('color').value;
+
+    const nuevaOpcion = document.createElement('option');
+    nuevaOpcion.value = placa;
+    nuevaOpcion.textContent = `${marca} ${modelo} ${anio} - ${placa}`;
+
+    selectVehiculo.appendChild(nuevaOpcion);
+    selectVehiculo.value = placa;
+
+    formVehiculo.reset();
+    cerrarModal();
+});

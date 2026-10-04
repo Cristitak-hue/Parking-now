@@ -102,19 +102,11 @@
                                     <label for="Vehiculo">Vehiculo</label>
                                     <select name="" id="Vehiculo">
                                         <option value="" disabled selected> Selecciona un Vehículo</option>
-                                        <option value="">lamborghini Urus 2020</option>
-                                        <option value="">Chevrolet Beat 2021</option>
+                                        <option value="agregar">+ Agregar Vehiculo</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="abajo">
-                                <div class="tipo-vehiculo">
-                                    <p>Tipo de Vehículo</p>
-                                    <input type="radio" id="carro" name="tipo-vehiculo" value="Carro">
-                                    <label for="carro"><i class="fa-solid fa-car"></i> Carro</label>
-                                    <input type="radio" id="moto" name="tipo-vehiculo" value="Moto">
-                                    <label for="carro"><i class="fa-solid fa-motorcycle"></i> Moto</label>
-                                </div>
                                 <div class="input-group">
                                     <label for="hora-entrada">Hora</label>
                                     <input type="time" id="hora-entrada" name="hora-entrada">
@@ -152,6 +144,11 @@
                                     <h5>Parqueadero Rafa</h5> 
                                     <p>5 cupos disponibles</p>
                                     <p>1.2 Km</p>
+                                    <!-- Info extra -->
+                                    <div class="lot-info-extra">
+                                        <p><i class="fa-solid fa-dollar-sign"></i> Tarifa: $4.000 hora</p>
+                                        <p><i class="fa-solid fa-clock"></i> Horario 6:00 a.m - 10:00 p.m</p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -205,6 +202,53 @@
                 </div>
             </aside>
         </main>
+    </div>
+        <div class="modal-overlay oculto" id="modalVehiculo">
+        <div class="modal-contenido">
+            <div class="modal-header">
+                <h3>Agregar Vehículo</h3>
+                <button type="button" class="modal-cerrar" id="cerrarModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        
+            <form id="formVehiculo">
+                <div class="modal-tipo-vehiculo">
+                    <p>Tipo de Vehículo</p>
+                    <input type="radio" id="carro" name="tipo-vehiculo" value="Carro" checked>
+                    <label for="carro"><i class="fa-solid fa-car"></i> Carro</label>
+                    <input type="radio" id="moto" name="tipo-vehiculo" value="Moto">
+                    <label for="moto"><i class="fa-solid fa-motorcycle"></i> Moto</label>
+                </div>
+            
+                <div class="input-group">
+                    <label for="marca">Marca</label>
+                    <input type="text" id="marca" name="marca" required>
+                </div>
+            
+                <div class="input-group">
+                    <label for="modelo">Modelo</label>
+                    <input type="text" id="modelo" name="modelo" required>
+                </div>
+            
+                <div class="input-group">
+                    <label for="anio">Año</label>
+                    <input type="number" id="anio" name="anio" min="1980" max="2026" required>
+                </div>
+            
+                <div class="input-group">
+                    <label for="placa">Placa</label>
+                    <input type="text" id="placa" name="placa" required>
+                </div>
+            
+                <div class="input-group">
+                    <label for="color">Color</label>
+                    <input type="text" id="color" name="color" required>
+                </div>
+            
+                <button type="submit" class="btn-buscar">Guardar Vehículo</button>
+            </form>
+        </div>
     </div>
     <script src="/Javascript/Dashboard_usuario.js"></script>
 </body>
