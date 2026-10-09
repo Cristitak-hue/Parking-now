@@ -77,3 +77,41 @@ formVehiculo.addEventListener('submit', function(evento){
     formVehiculo.reset();
     cerrarModal();
 });
+// Funcion para que cambie dependiendo de la marca elegida
+const marcasPorTipo = {
+    Carro: ["Chevrolet", "Renault", "Mazda", "Kia", "Toyota"],
+    Moto: ["Yamaha", "Honda", "Suzuki", "AKT", "Bajaj"]
+};
+const selectMarca = document.getElementById('marca');
+
+function actualizarMarcas(tipo){
+    selectMarca.innerHTML = '<option value="" disabled selected>Selecciona una marca</option>';
+
+    const listaDeMarcas = marcasPorTipo[tipo];
+
+    listaDeMarcas.forEach(function(marca){
+        const opcion = document.createElement('option');
+        opcion.value = marca;
+        opcion.textContent = marca;
+        selectMarca.appendChild(opcion);
+    });
+}
+const opcion = document.createElement('option');
+opcion.value = marca;
+opcion.textContent = marca;
+selectMarca.appendChild(opcion);
+const radiosVehiculo = document.querySelectorAll('input[name="tipo-vehiculo"]');
+
+radiosVehiculo.forEach(function(radio){
+    radio.addEventListener('change', function(evento){
+        const tipoElegido = evento.target.value; // "Carro" o "Moto"
+        actualizarMarcas(tipoElegido);
+    });
+});
+selectVehiculo.addEventListener('change', function(evento){
+    if (evento.target.value === 'agregar') {
+        modalVehiculo.classList.remove('oculto');
+        selectVehiculo.value = '';
+        actualizarMarcas('Carro');
+    }
+});
