@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador| Parking-now</title>
+    <link rel="stylesheet" href="CSS/Administrador.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <aside class="barra-lateral">
+
+            <div class="logo">
+
+               <a href="/Index.html"><img src="/images/Logofsinfondo.png" alt="Logo Parking-now"></a>
+                    
+
+            </div>
+
+            <nav class="menu">
+
+                <a href="#" class="menu-activo">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fa-solid fa-car"></i>
+
+                    <span>Parqueadero</span>
+
+                    <i class="fa-solid fa-chevron-right flecha"></i>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <span>Reservas</span>
+
+                </a>
+                <a href="#">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Cajero Conductor</span>
+
+                </a>
+                <a href="#">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <span>Horario</span>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    <span>Ingresos y salidas</span>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>Usuarios</span>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    <span>Reportes</span>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>Configuración</span>
+
+                </a>
+
+            </nav>
+
+            <div class="cerrar-sesion">
+
+                <a href="#">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Cerrar sesión</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+        <div class="contenido-dashboard">
+
+            <header class="encabezado-dashboard">
+
+                <button type="button" class="boton-menu">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="saludo">
+
+                    <h1>
+                        Hola, Administrador
+                    </h1>
+
+                    <p>
+                        Bienvenido al panel de administración
+                    </p>
+
+                </div>
+
+                <div class="acciones-header">
+
+                    <button type="button" class="notificaciones">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="punto-notificacion"></span>
+
+                    </button>
+
+                    <div class="usuario-header">
+
+                        <div class="foto-usuario">
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </div>
+
+                        <div class="informacion-usuario">
+
+                            <strong>
+                                Administrador
+                            </strong>
+
+                            <span>
+                                Administrador
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <main>
+
+                <section class="titulo-dashboard">
+
+                    <div>
+
+                        <h2>
+                            Resumen general
+                        </h2>
+
+                        <p>
+                            Aquí puedes ver el estado actual del parqueadero.
+                        </p>
+
+                    </div>
+
+                    <div class="fecha-dashboard">
+
+                        <div>
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                            <span>
+                                18 de septiembre de 2026
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <i class="fa-regular fa-clock"></i>
+
+                            <span>
+                                10:24 a. m.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="tarjetas-resumen">
+
+                    <article class="tarjeta-resumen">
+
+                        <div class="icono-resumen">
+
+                            <i class="fa-solid fa-car"></i>
+
+                        </div>
+
+                        <h3>
+                            Total de espacios
+                        </h3>
+
+                        <strong>
+                            50
+                        </strong>
+
+                        <p>
+                            45 disponibles | 5 ocupados
+                        </p>
+
+                        <div class="barra-progreso">
+
+                            <span></span>
+
+                        </div>
+
+                    </article>
+
+                    <article class="tarjeta-resumen">
+
+                        <div class="icono-resumen">
+
+                            <i class="fa-regular fa-calendar-check"></i>
+
+                        </div>
+
+                        <h3>
+                            Reservas hoy
+                        </h3>
+
+                        <strong>
+                            12
+                        </strong>
+
+                        <p class="dato-positivo">
+
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+
+                            +20% vs. ayer
+
+                        </p>
+
+                        <div class="mini-grafica">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </article>
+
+                    <article class="tarjeta-resumen">
+
+                        <div class="icono-resumen">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+                        <h3>
+                            Usuarios registrados
+                        </h3>
+
+                        <strong>
+                            248
+                        </strong>
+
+                        <p class="dato-positivo">
+
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+
+                            +12% vs. mes anterior
+
+                        </p>
+
+                        <div class="mini-grafica">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </article>
+
+                    <article class="tarjeta-resumen">
+
+                        <div class="icono-resumen">
+
+                            <i class="fa-solid fa-dollar-sign"></i>
+
+                        </div>
+
+                        <h3>
+                            Ingresos de hoy
+                        </h3>
+
+                        <strong>
+                            $185.000
+                        </strong>
+
+                        <p class="dato-positivo">
+
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+
+                            +15% vs. ayer
+
+                        </p>
+
+                        <div class="mini-grafica">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <section class="contenido-central">
+
+                    <article class="panel estado-parqueadero">
+
+                        <div class="titulo-panel">
+
+                            <div>
+
+                                <h2>
+                                    Estado del parqueadero
+                                </h2>
+
+                                <p>
+                                    Vista rápida de la ocupación por zonas.
+                                </p>
+
+                            </div>
+
+                            <div class="leyenda">
+
+                                <span>
+                                    <i class="disponible"></i>
+                                    Disponible (45)
+                                </span>
+
+                                <span>
+                                    <i class="ocupado"></i>
+                                    Ocupado (5)
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="zona">
+
+                            <strong>
+                                A
+                            </strong>
+
+                            <div class="espacios">
+
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="ocupado-espacio"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+
+                            </div>
+
+                            <span>
+                                12 / 15
+                            </span>
+
+                        </div>
+
+                        <div class="zona">
+
+                            <strong>
+                                B
+                            </strong>
+
+                            <div class="espacios">
+
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="ocupado-espacio"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+
+                            </div>
+
+                            <span>
+                                10 / 15
+                            </span>
+
+                        </div>
+
+                        <div class="zona">
+
+                            <strong>
+                                C
+                            </strong>
+
+                            <div class="espacios">
+
+                                <span class="libre"></span>
+                                <span class="ocupado-espacio"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="ocupado-espacio"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+
+                            </div>
+
+                            <span>
+                                8 / 10
+                            </span>
+
+                        </div>
+
+                        <div class="zona">
+
+                            <strong>
+                                D
+                            </strong>
+
+                            <div class="espacios">
+
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="ocupado-espacio"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+
+                            </div>
+
+                            <span>
+                                7 / 10
+                            </span>
+
+                        </div>
+
+                        <div class="zona">
+
+                            <strong>
+                                E
+                            </strong>
+
+                            <div class="espacios">
+
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="ocupado-espacio"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+                                <span class="ocupado-espacio"></span>
+                                <span class="libre"></span>
+                                <span class="libre"></span>
+
+                            </div>
+
+                            <span>
+                                8 / 10
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                    <article class="panel ocupacion">
+
+                        <div class="titulo-panel">
+
+                            <div>
+
+                                <h2>
+                                    Ocupación del parqueadero
+                                </h2>
+
+                                <p>
+                                    Últimos 7 días
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="grafica">
+
+                            <div class="eje">
+
+                                <span>50</span>
+                                <span>40</span>
+                                <span>30</span>
+                                <span>20</span>
+                                <span>10</span>
+                                <span>0</span>
+
+                            </div>
+
+                            <div class="grafica-contenido">
+
+                                <div class="linea-grafica">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+                                <div class="fechas-grafica">
+
+                                    <span>
+                                        12 sep
+                                    </span>
+
+                                    <span>
+                                        13 sep
+                                    </span>
+
+                                    <span>
+                                        14 sep
+                                    </span>
+
+                                    <span>
+                                        15 sep
+                                    </span>
+
+                                    <span>
+                                        16 sep
+                                    </span>
+
+                                    <span>
+                                        17 sep
+                                    </span>
+
+                                    <span>
+                                        18 sep
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <section class="contenido-inferior">
+
+                    <article class="panel reservas-recientes">
+
+                        <div class="titulo-panel">
+
+                            <div>
+
+                                <h2>
+                                    Reservas recientes
+                                </h2>
+
+                                <p>
+                                    Últimas reservas realizadas en el sistema.
+                                </p>
+
+                            </div>
+
+                            <a href="#">
+                                Ver todas
+                            </a>
+
+                        </div>
+
+                        <div class="tabla-contenedor">
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>ID</th>
+
+                                        <th>Usuario</th>
+
+                                        <th>Vehículo</th>
+
+                                        <th>Fecha y hora</th>
+
+                                        <th>Zona - Bahía</th>
+
+                                        <th>Estado</th>
+
+                                        <th>Acciones</th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>#1054</td>
+
+                                        <td>Santiago R.</td>
+
+                                        <td>ABC123</td>
+
+                                        <td>18/09/2026 - 10:30 a. m.</td>
+
+                                        <td>A - 05</td>
+
+                                        <td>
+
+                                            <span class="estado confirmado">
+                                                Confirmada
+                                            </span>
+
+                                        </td>
+
+                                        <td>
+
+                                            <button type="button">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button type="button">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>#1053</td>
+
+                                        <td>Valentina G.</td>
+
+                                        <td>DEF456</td>
+
+                                        <td>18/09/2026 - 11:15 a. m.</td>
+
+                                        <td>B - 12</td>
+
+                                        <td>
+
+                                            <span class="estado confirmado">
+                                                Confirmada
+                                            </span>
+
+                                        </td>
+
+                                        <td>
+
+                                            <button type="button">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button type="button">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>#1052</td>
+
+                                        <td>Juan P.</td>
+
+                                        <td>GHI789</td>
+
+                                        <td>18/09/2026 - 12:00 p. m.</td>
+
+                                        <td>C - 03</td>
+
+                                        <td>
+
+                                            <span class="estado pendiente">
+                                                Pendiente
+                                            </span>
+
+                                        </td>
+
+                                        <td>
+
+                                            <button type="button">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button type="button">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>#1051</td>
+
+                                        <td>Laura M.</td>
+
+                                        <td>JKL012</td>
+
+                                        <td>18/09/2026 - 2:45 p. m.</td>
+
+                                        <td>D - 07</td>
+
+                                        <td>
+
+                                            <span class="estado confirmado">
+                                                Confirmada
+                                            </span>
+
+                                        </td>
+
+                                        <td>
+
+                                            <button type="button">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button type="button">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>#1050</td>
+
+                                        <td>Andrés F.</td>
+
+                                        <td>MNO345</td>
+
+                                        <td>18/09/2026 - 4:20 p. m.</td>
+
+                                        <td>E - 09</td>
+
+                                        <td>
+
+                                            <span class="estado pendiente">
+                                                Pendiente
+                                            </span>
+
+                                        </td>
+
+                                        <td>
+
+                                            <button type="button">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </button>
+
+                                            <button type="button">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </article>
+
+                    <div class="columna-derecha">
+
+                        <article class="panel proximas-reservas">
+
+                            <div class="titulo-panel">
+
+                                <h2>
+                                    Próximas reservas
+                                </h2>
+
+                                <a href="#">
+                                    Ver todas
+                                </a>
+
+                            </div>
+
+                            <div class="reserva">
+
+                                <div class="icono-reserva">
+
+                                    <i class="fa-regular fa-clock"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        10:30 a. m.
+                                    </strong>
+
+                                    <p>
+                                        ABC123
+                                    </p>
+
+                                    <small>
+                                        Zona A - Bahía 05
+                                    </small>
+
+                                </div>
+
+                                <span class="estado confirmado">
+                                    Confirmada
+                                </span>
+
+                            </div>
+
+                            <div class="reserva">
+
+                                <div class="icono-reserva">
+
+                                    <i class="fa-regular fa-clock"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        11:15 a. m.
+                                    </strong>
+
+                                    <p>
+                                        DEF456
+                                    </p>
+
+                                    <small>
+                                        Zona B - Bahía 12
+                                    </small>
+
+                                </div>
+
+                                <span class="estado confirmado">
+                                    Confirmada
+                                </span>
+
+                            </div>
+
+                            <div class="reserva">
+
+                                <div class="icono-reserva">
+
+                                    <i class="fa-regular fa-clock"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        12:00 p. m.
+                                    </strong>
+
+                                    <p>
+                                        GHI789
+                                    </p>
+
+                                    <small>
+                                        Zona C - Bahía 03
+                                    </small>
+
+                                </div>
+
+                                <span class="estado pendiente">
+                                    Pendiente
+                                </span>
+
+                            </div>
+
+                            <div class="reserva">
+
+                                <div class="icono-reserva">
+
+                                    <i class="fa-regular fa-clock"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        2:45 p. m.
+                                    </strong>
+
+                                    <p>
+                                        JKL012
+                                    </p>
+
+                                    <small>
+                                        Zona D - Bahía 07
+                                    </small>
+
+                                </div>
+
+                                <span class="estado confirmado">
+                                    Confirmada
+                                </span>
+
+                            </div>
+
+                            <div class="reserva">
+
+                                <div class="icono-reserva">
+
+                                    <i class="fa-regular fa-clock"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        4:20 p. m.
+                                    </strong>
+
+                                    <p>
+                                        MNO345
+                                    </p>
+
+                                    <small>
+                                        Zona E - Bahía 09
+                                    </small>
+
+                                </div>
+
+                                <span class="estado pendiente">
+                                    Pendiente
+                                </span>
+
+                            </div>
+
+                        </article>
+
+                        <article class="panel actividad">
+
+                            <div class="titulo-panel">
+
+                                <h2>
+                                    Actividad reciente
+                                </h2>
+
+                            </div>
+
+                            <div class="actividad-item">
+
+                                <div class="icono-actividad">
+
+                                    <i class="fa-solid fa-car"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <p>
+                                        Entrada de vehículo ABC123
+                                    </p>
+
+                                    <small>
+                                        Zona A - Bahía 05
+                                    </small>
+
+                                </div>
+
+                                <time>
+                                    10:35 a. m.
+                                </time>
+
+                            </div>
+
+                            <div class="actividad-item">
+
+                                <div class="icono-actividad">
+
+                                    <i class="fa-solid fa-car"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <p>
+                                        Salida de vehículo XYZ789
+                                    </p>
+
+                                    <small>
+                                        Zona B - Bahía 08
+                                    </small>
+
+                                </div>
+
+                                <time>
+                                    09:12 a. m.
+                                </time>
+
+                            </div>
+
+                            <div class="actividad-item">
+
+                                <div class="icono-actividad">
+
+                                    <i class="fa-regular fa-calendar-check"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <p>
+                                        Nueva reserva realizada
+                                    </p>
+
+                                    <small>
+                                        Usuario: Valentina G.
+                                    </small>
+
+                                </div>
+
+                                <time>
+                                    08:47 a. m.
+                                </time>
+
+                            </div>
+
+                            <div class="actividad-item">
+
+                                <div class="icono-actividad">
+
+                                    <i class="fa-solid fa-dollar-sign"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <p>
+                                        Pago recibido
+                                    </p>
+
+                                    <small>
+                                        Reserva #1048 - $12.000
+                                    </small>
+
+                                </div>
+
+                                <time>
+                                    08:20 a. m.
+                                </time>
+
+                            </div>
+
+                            <div class="actividad-item">
+
+                                <div class="icono-actividad">
+
+                                    <i class="fa-solid fa-circle-xmark"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <p>
+                                        Cancelación de reserva
+                                    </p>
+
+                                    <small>
+                                        Usuario: Carlos T.
+                                    </small>
+
+                                </div>
+
+                                <time>
+                                    07:56 a. m.
+                                </time>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

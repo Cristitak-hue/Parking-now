@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar parqueaderos | Parking-now</title>
+    <link rel="stylesheet" href="CSS/mapa-parqueaderos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <img src="/PARKING_NOW-20260923T112208Z-1-001/PARKING_NOW/images/Logofsinfondo.png" width="30%" alt="">
+
+        </a>
+
+        <nav class="navegacion">
+            <a href="index.html">Inicio</a>
+            <a href="mapa-parqueaderos.html" class="activo">Mapa</a>
+            <a href="#">Mis reservas</a>
+            <a href="#">Pagos</a>
+        </nav>
+
+        <div class="perfil">
+            <button type="button" class="notificaciones" aria-label="Notificaciones">
+                <i class="fa-regular fa-bell"></i>
+            </button>
+            <div class="avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <span>Mi cuenta</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <main class="contenedor">
+
+        <form class="buscador" action="mapa-parqueaderos.html" method="get">
+            <div class="campo-busqueda">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                    type="search"
+                    name="ubicacion"
+                    id="ubicacion"
+                    placeholder="Buscar parqueadero, dirección o zona"
+                    aria-label="Ubicación del parqueadero"
+                >
+            </div>
+
+            <div class="campo-filtro">
+                <label for="fecha">
+                    <i class="fa-regular fa-calendar"></i>
+                    Fecha
+                </label>
+                <input type="date" id="fecha" name="fecha">
+            </div>
+
+            <div class="campo-filtro">
+                <label for="hora">
+                    <i class="fa-regular fa-clock"></i>
+                    Hora de llegada
+                </label>
+                <input type="time" id="hora" name="hora">
+            </div>
+
+            <div class="campo-filtro">
+                <label for="vehiculo">
+                    <i class="fa-solid fa-car"></i>
+                    Vehículo
+                </label>
+                <select id="vehiculo" name="vehiculo">
+                    <option value="carro">Carro</option>
+                    <option value="moto">Moto</option>
+                    <option value="bicicleta">Bicicleta</option>
+                </select>
+            </div>
+
+            <button type="submit" class="boton-buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Buscar
+            </button>
+        </form>
+
+        <section class="resultados">
+
+            <aside class="lista-parqueaderos">
+                <div class="titulo-lista">
+                    <div>
+                        <h1>Parqueaderos cercanos</h1>
+                        <p>Encuentra el lugar ideal para estacionar</p>
+                    </div>
+                    <span class="cantidad">5 opciones</span>
+                </div>
+
+                <div class="ordenar">
+                    <label for="orden">Ordenar por</label>
+                    <select id="orden" name="orden">
+                        <option value="distancia">Menor distancia</option>
+                        <option value="precio">Menor precio</option>
+                        <option value="disponibilidad">Disponibilidad</option>
+                    </select>
+                </div>
+
+                <article class="tarjeta-parqueadero seleccionado" data-id="1">
+                    <div class="imagen-parqueadero imagen-uno">
+                        <i class="fa-solid fa-square-parking"></i>
+                    </div>
+                    <div class="datos-parqueadero">
+                        <h2>Parqueadero Central</h2>
+                        <p><i class="fa-solid fa-location-dot"></i> Centro, Bogotá</p>
+                        <strong>$2.500 <span>/ hora</span></strong>
+                        <small><i class="fa-solid fa-circle"></i> 12 espacios disponibles</small>
+                    </div>
+                    <button class="ver-parqueadero" type="button" aria-label="Ver Parqueadero Central">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </article>
+
+                <article class="tarjeta-parqueadero" data-id="2">
+                    <div class="imagen-parqueadero imagen-dos">
+                        <i class="fa-solid fa-square-parking"></i>
+                    </div>
+                    <div class="datos-parqueadero">
+                        <h2>Parqueadero La 78</h2>
+                        <p><i class="fa-solid fa-location-dot"></i> Chapinero, Bogotá</p>
+                        <strong>$2.000 <span>/ hora</span></strong>
+                        <small><i class="fa-solid fa-circle"></i> 8 espacios disponibles</small>
+                    </div>
+                    <button class="ver-parqueadero" type="button" aria-label="Ver Parqueadero La 78">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </article>
+
+                <article class="tarjeta-parqueadero" data-id="3">
+                    <div class="imagen-parqueadero imagen-tres">
+                        <i class="fa-solid fa-square-parking"></i>
+                    </div>
+                    <div class="datos-parqueadero">
+                        <h2>Parqueadero Zona T</h2>
+                        <p><i class="fa-solid fa-location-dot"></i> Zona T, Bogotá</p>
+                        <strong>$2.800 <span>/ hora</span></strong>
+                        <small><i class="fa-solid fa-circle"></i> 15 espacios disponibles</small>
+                    </div>
+                    <button class="ver-parqueadero" type="button" aria-label="Ver Parqueadero Zona T">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </article>
+
+                <article class="tarjeta-parqueadero" data-id="4">
+                    <div class="imagen-parqueadero imagen-cuatro">
+                        <i class="fa-solid fa-square-parking"></i>
+                    </div>
+                    <div class="datos-parqueadero">
+                        <h2>Parking Empresarial</h2>
+                        <p><i class="fa-solid fa-location-dot"></i> Usaquén, Bogotá</p>
+                        <strong>$3.500 <span>/ hora</span></strong>
+                        <small><i class="fa-solid fa-circle"></i> 6 espacios disponibles</small>
+                    </div>
+                    <button class="ver-parqueadero" type="button" aria-label="Ver Parking Empresarial">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </article>
+
+                <article class="tarjeta-parqueadero" data-id="5">
+                    <div class="imagen-parqueadero imagen-cinco">
+                        <i class="fa-solid fa-square-parking"></i>
+                    </div>
+                    <div class="datos-parqueadero">
+                        <h2>Parqueadero Calle 100</h2>
+                        <p><i class="fa-solid fa-location-dot"></i> Calle 100, Bogotá</p>
+                        <strong>$2.200 <span>/ hora</span></strong>
+                        <small><i class="fa-solid fa-circle"></i> 10 espacios disponibles</small>
+                    </div>
+                    <button class="ver-parqueadero" type="button" aria-label="Ver Parqueadero Calle 100">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </article>
+            </aside>
+
+            <section class="mapa" aria-label="Mapa de parqueaderos">
+                <div class="calles calle-horizontal"></div>
+                <div class="calles calle-vertical"></div>
+                <div class="calle-diagonal"></div>
+
+                <span class="nombre-zona zona-suba">Suba</span>
+                <span class="nombre-zona zona-usaquen">Usaquén</span>
+                <span class="nombre-zona zona-chapinero">Chapinero</span>
+                <span class="nombre-zona zona-centro">Centro</span>
+                <span class="nombre-zona zona-bogota">BOGOTÁ</span>
+
+                <button type="button" class="marcador marcador-uno activo" data-id="1" aria-label="Parqueadero Central">
+                    <i class="fa-solid fa-square-parking"></i>
+                    <span>$2.500</span>
+                </button>
+
+                <button type="button" class="marcador marcador-dos" data-id="2" aria-label="Parqueadero La 78">
+                    <i class="fa-solid fa-square-parking"></i>
+                    <span>$2.000</span>
+                </button>
+
+                <button type="button" class="marcador marcador-tres" data-id="3" aria-label="Parqueadero Zona T">
+                    <i class="fa-solid fa-square-parking"></i>
+                    <span>$2.800</span>
+                </button>
+
+                <button type="button" class="marcador marcador-cuatro" data-id="4" aria-label="Parking Empresarial">
+                    <i class="fa-solid fa-square-parking"></i>
+                    <span>$3.500</span>
+                </button>
+
+                <button type="button" class="marcador marcador-cinco" data-id="5" aria-label="Parqueadero Calle 100">
+                    <i class="fa-solid fa-square-parking"></i>
+                    <span>$2.200</span>
+                </button>
+
+                <button type="button" class="ubicacion-actual" aria-label="Mi ubicación">
+                    <i class="fa-solid fa-crosshairs"></i>
+                </button>
+
+                <div class="aviso-mapa">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Mapa de demostración
+                </div>
+            </section>
+
+            <aside class="detalle-parqueadero">
+                <div class="foto-detalle">
+                    <i class="fa-solid fa-square-parking"></i>
+                    <span>Vista del parqueadero</span>
+                </div>
+
+                <div class="detalle-contenido">
+                    <span class="etiqueta-disponible">
+                        <i class="fa-solid fa-circle"></i>
+                        Disponible
+                    </span>
+
+                    <h2 id="nombre-detalle">Parqueadero Central</h2>
+
+                    <div class="direccion-detalle">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span id="direccion-detalle">Centro, Bogotá</span>
+                    </div>
+
+                    <div class="distancia">
+                        <i class="fa-solid fa-route"></i>
+                        <span id="distancia-detalle">A 0,8 km de la ubicación seleccionada</span>
+                    </div>
+
+                    <div class="separador"></div>
+
+                    <div class="resumen-disponibilidad">
+                        <span>Espacios disponibles</span>
+                        <strong id="espacios-detalle">12</strong>
+                    </div>
+
+                    <div class="precio-detalle">
+                        <span>Tarifa de referencia</span>
+                        <strong id="precio-detalle">$2.500 <small>/ hora</small></strong>
+                    </div>
+
+                    <div class="informacion-extra">
+                        <div>
+                            <i class="fa-solid fa-clock"></i>
+                            <span>Consulta los horarios del establecimiento</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-car"></i>
+                            <span>Disponibilidad según tipo de vehículo</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="boton-reservar" id="boton-reservar">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        Reservar espacio
+                    </button>
+
+                    <p class="nota-reserva">
+                        La tarifa final dependerá del tiempo real de estacionamiento.
+                    </p>
+                </div>
+            </aside>
+
+        </section>
+
+    </main>
+
+
+
+</body>
+</html>
