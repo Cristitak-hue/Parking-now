@@ -35,20 +35,13 @@ document.addEventListener('click', function(evento){
         panelsesionBtn.classList.add('oculto')
     }
 });
-/*cuando se elige la opcion + vehiculo */
-selectVehiculo.addEventListener('change', function(evento){
-    if (evento.target.value === 'agregar') {
-        modalVehiculo.classList.remove('oculto');
-        selectVehiculo.value = '';
-    }
-});
 function cerrarModal(){
     modalVehiculo.classList.add('oculto');
 }
 cerrarModalBtn.addEventListener('click', cerrarModal);
 
 modalVehiculo.addEventListener('click', function(evento){
-    if (evento.tarjet === modalVehiculo) {
+    if (evento.target === modalVehiculo) {
         cerrarModal();
     }
 });
@@ -76,4 +69,49 @@ formVehiculo.addEventListener('submit', function(evento){
 
     formVehiculo.reset();
     cerrarModal();
+});
+// Funcion para que cambie dependiendo de la marca elegida
+const marcasPorTipo = {
+    Carro: ["Chevrolet", "Renault", "Mazda", "Kia", "Toyota"],
+    Moto: ["Yamaha", "Honda", "Suzuki", "AKT", "Bajaj"]
+};
+const selectMarca = document.getElementById('marca');
+
+function actualizarMarcas(tipo){
+    selectMarca.innerHTML = '<option value="" disabled selected>Selecciona una marca</option>';
+
+    const listaDeMarcas = marcasPorTipo[tipo];
+
+    listaDeMarcas.forEach(function(marca){
+        const opcion = document.createElement('option');
+        opcion.value = marca;
+        opcion.textContent = marca;
+        selectMarca.appendChild(opcion);
+    });
+}
+const radiosVehiculo = document.querySelectorAll('input[name="tipo-vehiculo"]');
+const inputPlaca = document.getElementById('placa')
+
+radiosVehiculo.forEach(function(radio){
+    radio.addEventListener('change', function(evento){
+        const tipoElegido = evento.target.value; // "Carro" o "Moto"
+        actualizarMarcas(tipoElegido);
+        
+        if (tipoElegido === 'Carro'){
+        inputPlaca.pattern = '[A-Z]{3}[0-9]{3}';
+        inputPlaca.placeholder = 'ej ABC123';
+        inputPlaca.title = '3 letras seguidas de 3 numeros, ej ABC123';
+        } else {
+        inputPlaca.pattern = '[A-Z]{3}[0-9]{2}[A-Z]?;';
+        inputPlaca.placeholder = 'ej ABC12 ABC12D';
+        inputPlaca.title = '3 letras, 2 números, y opcionalmente una letra más al final';
+    }
+    });
+});
+selectVehiculo.addEventListener('change', function(evento){
+    if (evento.target.value === 'agregar') {
+        modalVehiculo.classList.remove('oculto');
+        selectVehiculo.value = '';
+        actualizarMarcas('Carro');
+    }
 });

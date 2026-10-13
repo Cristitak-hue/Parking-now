@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="shortcut icon" href="/Images/image.png" type="image/x-icon">
 </head>
 <body>
@@ -19,9 +20,14 @@
             <h1>Inicia sesión</h1>
             <hr>
             <form id="login">
-                <label for="email"> Correo Electronico</label><br><input type="text" id="email" placeholder="Example: username@Parkgin-now.com" class="input"><br>
+                <label for="email"> Correo Electronico</label><br><input type="email" id="email" placeholder="Example: username@Parkgin-now.com" class="input"><br>
                 <p id="error-email"></p>
-                <label for="contraseña">Contraseña</label><br><input type="password" id="contraseña" placeholder="min. 8 caracteres" class="input"><br>
+                <label for="contraseña">Contraseña</label><br>
+                
+                <div class="input-wrapper">
+                    <input type="password" id="contraseña" placeholder="min. 8 caracteres" class="input">
+                    <i class="fa-solid fa-eye" id="togglePassword"></i>
+                </div>
                 <p id="error-contraseña"></p>
                 <button type="submit">Siguiente</button><br>
                 <a href="/Login-usuario.html">¿No tienes una cuenta? Registrate-now</a><br>
@@ -31,5 +37,98 @@
     </div>
     <script src="/Javascript/Inicio_sesion.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <footer id="contacto">
+
+        <div class="contenido-footer">
+
+            <div class="footer-logo">
+
+                <img src="images/Logo_parkingnow.png" alt="Parking-now">
+
+                <p>
+                    Estaciona sin complicaciones.
+                </p>
+
+            </div>
+
+
+            <div class="footer-columna">
+
+                <h3>
+                    Parking-now
+                </h3>
+
+                <a href="#">
+                    Inicio
+                </a>
+
+                <a href="#servicios">
+                    Servicios
+                </a>
+
+                <a href="#tarifas">
+                    Tarifas
+                </a>
+
+            </div>
+
+
+            <div class="footer-columna">
+
+                <h3>
+                    Ayuda
+                </h3>
+
+                <a href="#">
+                    Preguntas frecuentes
+                </a>
+
+                <a href="#">
+                    Contacto
+                </a>
+
+                <a href="#">
+                    PQRS
+                </a>
+
+            </div>
+
+
+            <div class="footer-columna">
+
+                <h3>
+                    Síguenos
+                </h3>
+
+                <div class="redes">
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                © 2026 Parking-now. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
 </body>
 </html>

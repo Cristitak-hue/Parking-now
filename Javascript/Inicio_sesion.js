@@ -3,7 +3,6 @@ const contraseña = document.getElementById('contraseña');
 const formulario = document.getElementById('login');
 const erroremail = document.getElementById('error-email')
 const errorcontraseña = document.getElementById('error-contraseña')
-const tienenumero = document.getElementById = /\d/.test(contraseña.value)
 const formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 formulario.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -26,9 +25,9 @@ formulario.addEventListener("submit", function(event) {
         errorcontraseña.textContent = "*La contraseña debe tener un número."
     }else if (!/[!@#$%^&*._-]/.test(contraseña.value)){
         errorcontraseña.textContent = "La contraseña debe contener un caracter especial"
-    }else if(!/[A-Z]/){
+    }else if(!/[A-Z]/.test){
         errorcontraseña.textContent = "Debe contener al menos una mayúscula"
-    }else if(!/[a-z]/){
+    }else if(!/[a-z]/.test){
         errorcontraseña.textContent = "Debe contener al menos una minúscula"
     }else{
         errorcontraseña.textContent = ""
@@ -43,3 +42,20 @@ formulario.addEventListener("submit", function(event) {
     });
     }
 }); 
+//Ojo de mostrar contraseña
+const contraseñaInput = document.getElementById('contraseña');
+const togglePassword = document.getElementById('togglePassword');
+
+togglePassword.addEventListener('click', function(){
+    const tipoActual = contraseñaInput.type;
+
+    if (tipoActual === 'password'){
+        contraseñaInput.type = 'text';
+        togglePassword.classList.remove('fa-eye');
+        togglePassword.classList.add('fa-eye-slash');
+    } else {
+        contraseñaInput.type = 'password';
+        togglePassword.classList.remove('fa-eye.slash');
+        togglePassword.classList.add('fa-eye');
+    }
+});
