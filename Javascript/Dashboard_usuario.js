@@ -115,3 +115,78 @@ selectVehiculo.addEventListener('change', function(evento){
         actualizarMarcas('Carro');
     }
 });
+//Boton de cancelar reserva
+const btnCancelar = document.querySelector('.btn-cancelar');
+
+btnCancelar.addEventListener('click', function(){
+    const confirmado = confirm('¿Estás seguro de que quieres cancelar la reserva?');
+
+    if (confirmado) {
+        const tarjetaReserva = document.querySelector('.reserva-activa');
+        const SideDerecho = document.querySelector('.side-derecho');
+        tarjetaReserva.remove();
+
+        const mensaje = document.createElement('p');
+        mensaje.textContent = 'No tienes reservas activas en este momento.';
+        mensaje.style.color = '#888';
+        mensaje.style.textAlign = 'center';
+        SideDerecho.appendChild(mensaje);
+    }
+});
+//Boton para abrir y cerrar Btndetalles
+const Btndetalles = document.querySelector('.btn-detalles');
+const modalDetalles = document.getElementById('modalDetalles');
+const cerrarDetallesBtn = document.getElementById('cerrarModalDetalles');
+
+Btndetalles.addEventListener('click', function(){
+    modalDetalles.classList.remove('oculto');
+});
+function cerrarModalDetalles(){
+    modalDetalles.classList.add('oculto');
+}
+cerrarDetallesBtn.addEventListener('click', cerrarModalDetalles);
+
+modalDetalles.addEventListener('click', function(evento){
+    if (evento.target === modalDetalles) {
+        cerrarModalDetalles();
+    }
+});
+//Enlace hacia buscar disponibilidad
+const formBuscar = document.querySelector('.search form');
+
+formBuscar.addEventListener('submit', function(evento){
+    evento.preventDefault();
+
+        const datosBusqueda = {
+        zona: document.getElementById('zona').value,
+        parqueadero: document.getElementById('parqueadero').value,
+        vehiculo: document.getElementById('Vehiculo').value,
+        fecha: document.getElementById('Fecha').value,
+        hora: document.getElementById('hora-entrada').value
+    };
+    
+    localStorage.setItem('busquedaActual', JSON.stringify(datosBusqueda));
+    window.location.href = 'Reserva.HTML'
+});
+//Options de ña fecha
+const fechaReserva = document.getElementById('Fecha');
+
+const hoy = new Date();
+
+for (let i = 0; i< 3; i++){
+    const fecha = new Date(hoy);
+    fecha.setDate(hoy.getDate() + i);
+
+    const opcion = document.createElement('option');
+
+    opcion.value = fecha.toISOString().split('T')[0];
+
+    opcion.textContent = fecha.toLocaleDateString('es-CO',{
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long'
+    });
+    fechaReserva.appendChild(opcion);
+}
+localStorage.getItem('busquedaActual')
+

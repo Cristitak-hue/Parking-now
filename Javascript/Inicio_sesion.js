@@ -25,9 +25,9 @@ formulario.addEventListener("submit", function(event) {
         errorcontraseña.textContent = "*La contraseña debe tener un número."
     }else if (!/[!@#$%^&*._-]/.test(contraseña.value)){
         errorcontraseña.textContent = "La contraseña debe contener un caracter especial"
-    }else if(!/[A-Z]/.test){
+    }else if(!/[A-Z]/.test(contraseña.value)){
         errorcontraseña.textContent = "Debe contener al menos una mayúscula"
-    }else if(!/[a-z]/.test){
+    }else if(!/[a-z]/.test(contraseña.value)){
         errorcontraseña.textContent = "Debe contener al menos una minúscula"
     }else{
         errorcontraseña.textContent = ""
@@ -39,8 +39,11 @@ formulario.addEventListener("submit", function(event) {
             icon: 'success',
             confirmButtonText: 'Aceptar',
             confirmButtonColor: '#3085d6'
+    }).then(() => {
+        window.location.href = 'Dashboard_usuario.html';
     });
     }
+    
 }); 
 //Ojo de mostrar contraseña
 const contraseñaInput = document.getElementById('contraseña');

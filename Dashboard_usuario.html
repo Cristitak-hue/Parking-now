@@ -80,8 +80,8 @@
                                 <div class="input-group">
                                 <i class="fa-solid fa-location-dot icon-left"></i>
                                 <label for="zona">Ubicación</label>
-                                <select name="" id="zona">
-                                    <option value="Selecciona una Zona" disabled selected>Selecciona una Zona</option>
+                                <select name="" id="zona" required>
+                                    <option value="" disabled selected>Selecciona una Zona</option>
                                     <option value="Chapinero">Chapinero</option>
                                     <option value="Suba">Suba</option>
                                 </select>
@@ -89,7 +89,7 @@
                                 <div class="input-group">
                                     <i class="fa-solid fa-square-parking"></i>
                                     <label for="parqueadero">Parqueadero</label>
-                                    <select name="" id="parqueadero">
+                                    <select name="" id="parqueadero" required>
                                         <option value="" disabled selected>Selecciona un Parqueadero</option>
                                         <option value="">Parqueadero Don Rafa</option>
                                         <option value="">Parqueadero Don Rafa 2</option>
@@ -98,7 +98,7 @@
                                 <div class="input-group">
                                     <i class="fa-solid fa-car"></i>
                                     <label for="Vehiculo">Vehiculo</label>
-                                    <select name="" id="Vehiculo">
+                                    <select name="" id="Vehiculo" required>
                                         <option value="" disabled selected> Selecciona un Vehículo</option>
                                         <option value="agregar">+ Agregar Vehiculo</option>
                                     </select>
@@ -107,7 +107,13 @@
                             <div class="abajo">
                                 <div class="input-group">
                                     <label for="hora-entrada">Hora</label>
-                                    <input type="time" id="hora-entrada" name="hora-entrada">
+                                    <input type="time" id="hora-entrada" name="hora-entrada" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="fecha">Fecha</label>
+                                    <select name="Fecha" id="Fecha" required>
+                                        <option value="" disabled selected>Selecciona una fecha</option>
+                                    </select>
                                 </div>
                             </div>
                             <button type="submit" class="btn-buscar">
@@ -243,7 +249,7 @@
             
                 <div class="input-group">
                     <label for="color">Color</label>
-                    <select name="color" id="color">
+                    <select name="color" id="color" required>
                         <option value="" disabled selected>Selecciona un color</option>
                         <option value="Blanco">Blanco</option>
                         <option value="Negro">Negro</option>
@@ -255,9 +261,49 @@
                         <option value="Amarillo">Amarillo</option>
                     </select>
                 </div>
-            
                 <button type="submit" class="btn-buscar">Guardar Vehículo</button>
             </form>
+        </div>
+    </div>
+    <!-- Modal detalles -->
+    <div class="modal-overlay oculto" id="modalDetalles">
+        <div class="modal-contenido">
+            <div class="modal-header">
+                <h3>Detalles de la reservas</h3>
+                <button type="button" class="modal-cerrar" id="cerrarModalDetalles">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="dato-reserva">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <p class="dato-label">Parqueadero</p>
+                    <p class="dato-valor">Parqueadero calle 68</p>
+                </div>
+            </div>
+
+            <div class="dato-reserva">
+                <i class="fa-solid fa-clock"></i>
+                <div>
+                    <p class="dato-label">Hora de entrada</p>
+                    <p class="dato-valor">3:00 p.m</p>
+                </div>
+            </div>
+            <div class="dato-reserva">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                    <p class="dato-label">Estado</p>
+                    <p class="dato-valor">Confirmada</p>
+                </div>
+            </div>
+            <div class="dato-reserva">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <div>
+                    <p class="dato-label">Tarifa</p>
+                    <p class="dato-valor">$200 por minuto</p>
+                </div>
+            </div>
         </div>
     </div>
     <script src="/Javascript/Dashboard_usuario.js"></script>
