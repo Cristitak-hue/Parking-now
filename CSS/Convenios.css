@@ -1,0 +1,994 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+}
+body{
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+header{
+height: 100px;
+background-color: #002848;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 30px;
+flex-shrink: 0;
+font-family: 'Poppins', sans-serif;
+}
+.Parking-now{
+    height: 60px;
+    width: auto;
+}
+.logo-link{
+    display: inline-block;
+    text-decoration: none;
+}
+.logo-link img{
+    display: block;
+}
+.notificacion{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.notificacion i{
+    font-size: 20px;
+    color: #fff;
+}
+.insignia{
+    position: absolute;
+    top: -4px;
+    right: -6px;
+    background: #e53935;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    min-width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2px;
+}
+.panel-notificaciones{
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 280px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px  rgba(0,0,0,0.12);
+    padding: 16px;
+    z-index: 10;
+}
+.panel-sesion{
+    position: absolute;
+    top: 85px;
+    right: 0;
+    width: 280px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px  rgba(0,0,0,0.12);
+    padding: 20px;
+    z-index: 10;
+}
+.modal-overlay.oculto{
+    display: none;
+}
+.oculto{
+    display: none;
+}
+.notif-item{
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    list-style: none;
+}
+.perfil-button{
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    list-style: none;
+}
+.perfil-button:last-child{
+    border-bottom: none;
+}
+.notif-item:last-child{
+    border-bottom: none;
+}
+.notif-titulo{
+    font-weight: 600;
+    font-size: 13px;
+}
+.notif-texto{
+    font-size: 12px;
+    color: #666;
+}
+.perfil-texto{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #666;
+}
+.perfil-texto i{
+    background-color: #002848;
+    font-size: 20px;
+}
+.perfil{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+.avatar-initials{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2196f3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+.texto-perfil{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+.nombre{
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+.rol{
+    font-size: 12px;
+    color: #888;
+}
+.right{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.perfil i{
+    color: #fff;
+}
+.mid{
+    display: flex;
+    flex: 1;
+}
+
+.principal{
+    flex: 1; /* toma el espacio restante */
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+}
+.sidebar{
+    width: 260px;
+    flex-shrink: 0;
+    background: #0d1b2a;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.inicio{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 24px;
+    align-items: flex-start;
+    background-color: #E4F7FC;
+      padding: 24px;
+    overflow-y: auto;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.nav.activo{
+    background: #2196f3;
+    color: #fff;
+}
+.nav:hover{
+    background: rgba(255, 255, 255, 0.08);
+}
+.ciudad{
+    height: auto;
+    width: 100%;
+}
+.sidebar-footer{
+    padding-bottom: 100px;
+    align-items: center;
+    
+}
+
+.contenido-convenios {
+    width: 100%;
+    padding: 25px;
+    background: #F1FAFF;
+    color: #0D2947;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contenido-convenios button,
+.contenido-convenios input,
+.contenido-convenios select {
+    font-family: inherit;
+}
+
+.contenido-convenios button {
+    cursor: pointer;
+}
+
+.banner-convenios {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    min-height: 185px;
+    padding: 30px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: linear-gradient(110deg, #E4F7FC, #CDEFFA);
+}
+
+.banner-texto {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    max-width: 650px;
+}
+
+.banner-texto > i {
+    margin-top: 7px;
+    color: #008DB5;
+    font-size: 48px;
+}
+
+.banner-texto h1 {
+    margin-bottom: 10px;
+    color: #0D2947;
+    font-size: 30px;
+    line-height: 1.3;
+}
+
+.banner-texto p {
+    max-width: 600px;
+    color: #526579;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.banner-ilustracion {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-width: 230px;
+    height: 125px;
+    color: #008DB5;
+}
+
+.banner-ilustracion i:first-child {
+    font-size: 65px;
+}
+
+.banner-ilustracion i:nth-child(2) {
+    font-size: 75px;
+}
+
+.banner-ilustracion i:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #27B6D8;
+    color: #FFFFFF;
+    font-size: 25px;
+}
+
+.filtros-convenios {
+    display: grid;
+    grid-template-columns: minmax(220px, 2fr) minmax(180px, 0.8fr) minmax(180px, 0.8fr);
+    gap: 15px;
+    margin: 22px 0;
+}
+
+.buscador-convenios,
+.filtro {
+    min-width: 0;
+    min-height: 58px;
+    padding: 10px 16px;
+    border: 1px solid #C8E5EE;
+    border-radius: 10px;
+    background: #FFFFFF;
+}
+
+.buscador-convenios {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.buscador-convenios > i {
+    color: #008DB5;
+    font-size: 18px;
+}
+
+.buscador-convenios input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #0D2947;
+    font-size: 13px;
+}
+
+.buscador-convenios input::placeholder {
+    color: #7A8A99;
+}
+
+.filtro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+.filtro label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #526579;
+    font-size: 11px;
+}
+
+.filtro label i {
+    color: #008DB5;
+}
+
+.filtro select {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #0D2947;
+    font-size: 13px;
+}
+
+.encabezado-listado {
+    margin-bottom: 18px;
+}
+
+.encabezado-listado h2 {
+    margin-bottom: 5px;
+    color: #0D2947;
+    font-size: 21px;
+}
+
+.encabezado-listado p {
+    color: #526579;
+    font-size: 13px;
+}
+
+.distribucion-convenios {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items: start;
+    gap: 22px;
+}
+
+.rejilla-convenios {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    align-items: stretch;
+}
+
+.tarjeta-convenio {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid #C8E5EE;
+    border-radius: 12px;
+    background: #FFFFFF;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.tarjeta-convenio:hover {
+    transform: translateY(-3px);
+    border-color: #5AC3E1;
+    box-shadow: 0 7px 20px #0D29470D;
+}
+
+.encabezado-tarjeta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 54px;
+    margin-bottom: 14px;
+}
+
+.icono-convenio {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #E4F7FC;
+    color: #008DB5;
+    font-size: 22px;
+}
+
+.encabezado-tarjeta h3 {
+    color: #0D2947;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.encabezado-tarjeta span {
+    display: block;
+    margin-top: 4px;
+    color: #526579;
+    font-size: 10px;
+}
+
+.descripcion-convenio {
+    min-height: 75px;
+    margin-bottom: 15px;
+    color: #526579;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.beneficio-convenio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 55px;
+    margin-top: auto;
+    padding: 10px;
+    border-radius: 9px;
+    background: #F1FAFF;
+}
+
+.beneficio-convenio > i {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #27B6D8;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.beneficio-convenio strong {
+    display: block;
+    margin-bottom: 3px;
+    color: #0D2947;
+    font-size: 11px;
+}
+
+.beneficio-convenio span {
+    display: block;
+    color: #526579;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.ver-detalle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: flex-start;
+    margin-top: 15px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #008DB5;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ver-detalle:hover {
+    color: #0D2947;
+}
+
+.ver-detalle i {
+    transition: transform 0.2s;
+}
+
+.ver-detalle:hover i {
+    transform: translateX(4px);
+}
+
+.panel-beneficios {
+    padding: 20px;
+    border: 1px solid #C8E5EE;
+    border-radius: 12px;
+    background: #FFFFFF;
+}
+
+.titulo-beneficios {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.titulo-beneficios > i {
+    margin-top: 2px;
+    color: #008DB5;
+    font-size: 28px;
+}
+
+.titulo-beneficios h2 {
+    color: #0D2947;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.panel-beneficios ul {
+    display: grid;
+    gap: 20px;
+    list-style: none;
+}
+
+.panel-beneficios li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #526579;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.panel-beneficios li i {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 19px;
+    height: 19px;
+    margin-top: 1px;
+    border-radius: 50%;
+    background: #008DB5;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+.contacto-convenios {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid #C8E5EE;
+}
+
+.icono-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    background: #E4F7FC;
+    color: #008DB5;
+    font-size: 19px;
+}
+
+.contacto-convenios p {
+    color: #526579;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.contacto-convenios button {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 43px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 9px;
+    background: #27B6D8;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.contacto-convenios button:hover {
+    background: #008DB5;
+}
+
+.sin-resultados {
+    display: none;
+    grid-column: 1 / -1;
+    padding: 35px 15px;
+    border: 1px dashed #C8E5EE;
+    border-radius: 10px;
+    color: #526579;
+    background: #FFFFFF;
+    font-size: 13px;
+    text-align: center;
+}
+
+.tarjeta-convenio[hidden] {
+    display: none;
+}
+
+.modal-convenio {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #0D294780;
+}
+
+.modal-convenio.modal-visible {
+    display: flex;
+}
+
+.contenido-modal {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    padding: 30px;
+    border: 1px solid #C8E5EE;
+    border-radius: 16px;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: #F1FAFF;
+    color: #526579;
+    font-size: 17px;
+}
+
+.icono-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #E4F7FC;
+    color: #008DB5;
+    font-size: 27px;
+}
+
+.contenido-modal h2 {
+    margin-bottom: 12px;
+    color: #0D2947;
+    font-size: 21px;
+}
+
+.contenido-modal p {
+    color: #526579;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.boton-modal {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 22px;
+    border: none;
+    border-radius: 9px;
+    background: #27B6D8;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.boton-modal:hover {
+    background: #008DB5;
+}
+
+@media (max-width: 1200px) {
+    .distribucion-convenios {
+        grid-template-columns: minmax(0, 1fr) 250px;
+        gap: 16px;
+    }
+
+    .rejilla-convenios {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .banner-ilustracion {
+        min-width: 180px;
+    }
+
+    .banner-texto h1 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 850px) {
+    .contenido-convenios {
+        padding: 18px;
+    }
+
+    .banner-convenios {
+        padding: 24px;
+    }
+
+    .banner-ilustracion {
+        display: none;
+    }
+
+    .filtros-convenios {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .buscador-convenios {
+        grid-column: 1 / -1;
+    }
+
+    .distribucion-convenios {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-beneficios {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .titulo-beneficios {
+        margin-bottom: 0;
+    }
+
+    .panel-beneficios ul {
+        gap: 12px;
+    }
+
+    .contacto-convenios {
+        grid-column: 1 / -1;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .contenido-convenios {
+        padding: 12px;
+    }
+
+    .banner-convenios {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .banner-texto {
+        gap: 13px;
+    }
+
+    .banner-texto > i {
+        font-size: 30px;
+    }
+
+    .banner-texto h1 {
+        font-size: 22px;
+    }
+
+    .banner-texto p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .filtros-convenios {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .buscador-convenios {
+        grid-column: auto;
+    }
+
+    .encabezado-listado h2 {
+        font-size: 19px;
+    }
+
+    .encabezado-listado p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .rejilla-convenios {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-convenio {
+        padding: 16px;
+    }
+
+    .descripcion-convenio {
+        min-height: auto;
+    }
+
+    .panel-beneficios {
+        display: block;
+        padding: 17px;
+    }
+
+    .titulo-beneficios {
+        margin-bottom: 20px;
+    }
+
+    .panel-beneficios ul {
+        gap: 15px;
+    }
+
+    .contacto-convenios {
+        margin-top: 22px;
+    }
+}
+
+footer {
+    background: #071c2d;
+
+    color: white;
+
+    padding: 60px 7% 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contenido-footer {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1-fr 1fr 1fr; /* Note: fixed minor typo in css grid spec if any, kept exact syntax */
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer-logo img {
+    width: 190px;
+
+    margin-bottom: 15px;
+}
+
+.footer-logo p {
+    color: #9db1c1;
+
+    font-size: 13px;
+}
+
+.footer-columna {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-columna h3 {
+    font-size: 15px;
+
+    margin-bottom: 8px;
+}
+
+.footer-columna a {
+    color: #9db1c1;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.footer-columna a:hover {
+    color: #27b6d8;
+}
+
+.redes {
+    display: flex;
+
+    gap: 10px;
+}
+
+.redes a {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+.redes a:hover {
+    background: #27b6d8;
+
+    color: white;
+}
+
+.copyright {
+    max-width: 1200px;
+
+    margin: 50px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+
+    text-align: center;
+}
+
+.copyright p {
+    color: #738a9c;
+
+    font-size: 11px;
+}
