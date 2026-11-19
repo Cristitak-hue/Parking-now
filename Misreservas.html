@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de reservas | Parking-now</title>
+
+    <link rel="stylesheet" href="/CSS/reservas.CSS">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+   
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+          <link rel="icon" type="" href="/images/LOGO1.1.png">
+</head>
+
+<body>
+    <div class="fondo"></div>
+    <div class="pagina">   
+        <header class="navbar">
+            <a href="/Index.html"><img src="/images/Logo_parkingnow.png" alt="Logo_parkingnow" style="width: 30%;"></a> 
+            </a>
+            <div class="usuario">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>Mi cuenta</span>
+                <i class="fa-solid fa-chevron-down flecha"></i>
+            </div>
+        </header>
+        <main>
+            <section class="encabezado">
+                <div class="titulo-seccion">
+                    <i class="fa-regular fa-calendar-check icono-titulo"></i>
+                    <div>
+                        <h1>Historial de reservas</h1>
+                        <p>Consulta y administra tus parqueaderos reservados</p>
+                    </div>
+                </div>
+                <div class="resumen">
+                    <article class="tarjeta-resumen">
+                        <i class="fa-regular fa-calendar icono-resumen"></i>
+                        <div>
+                            <span>Total de reservas</span>
+                            <strong>4</strong>
+                        </div>
+                    </article>
+                    <article class="tarjeta-resumen">
+                        <i class="fa-regular fa-circle-check icono-completado"></i>
+                        <div>
+                            <span>Completadas</span>
+                            <strong>1</strong>
+                        </div>
+                    </article>
+                    <article class="tarjeta-resumen">
+                        <i class="fa-regular fa-clock icono-resumen"></i>
+                        <div>
+                            <span>Próximas</span>
+                            <strong>2</strong>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <section class="panel-historial">
+                <div class="filtros">
+                    <div class="buscador">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input
+                            type="search"
+                            id="busqueda"
+                            placeholder="Buscar por parqueadero o ubicación"
+                            aria-label="Buscar reservas">
+                    </div>
+                    <div class="campo-filtro">
+                        <i class="fa-solid fa-filter"></i>
+                        <select id="filtroEstado" aria-label="Filtrar por estado">
+                            <option value="todos">Todas las reservas</option>
+                            <option value="completada">Completadas</option>
+                            <option value="confirmada">Confirmadas</option>
+                            <option value="pendiente">Pendientes</option>
+                            <option value="cancelada">Canceladas</option>
+                        </select>
+                    </div>
+                    <div class="campo-filtro">
+                        <i class="fa-regular fa-calendar"></i>
+
+                        <select id="filtroFecha" aria-label="Filtrar por fecha">
+                            <option value="todas">Todas las fechas</option>
+                            <option value="futuras">Reservas futuras</option>
+                            <option value="pasadas">Reservas anteriores</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tabla-contenedor">
+                    <table class="tabla-reservas">
+                        <thead>
+                            <tr>
+                                <th>Parqueadero</th>
+                                <th>Ubicación</th>
+                                <th>Fecha</th>
+                                <th>Horario</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listaReservas">
+
+                            <tr data-estado="completada" data-fecha="2026-10-12">
+                                <td>
+                                    <div class="parqueadero">
+                                        <div class="foto-parqueadero foto-uno">
+                                            <i class="fa-solid fa-square-parking"></i>
+                                        </div>
+                                        <strong>Parqueadero Carros Seguros</strong>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="ubicacion">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Engativá, Bogotá
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="fecha">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        12 oct. 2026
+                                    </span>
+                                </td>
+                                <td>8:00 a. m. – 10:00 a. m.</td>
+                                <td class="precio">$8.000</td>
+                                <td>
+                                    <span class="estado completada">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        Completada
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="btn-detalles"
+                                        data-detalles="Parking Centro Plaza|Centro, Bogotá|12 oct. 2026|8:00 a. m. – 10:00 a. m.|$8.000|Completada">
+                                        <i class="fa-regular fa-eye"></i>
+                                        Ver detalles
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr data-estado="confirmada" data-fecha="2026-10-18">
+                                <td>
+                                    <div class="parqueadero">
+                                        <div class="foto-parqueadero foto-dos">
+                                            <i class="fa-solid fa-square-parking"></i>
+                                        </div>
+                                        <strong>Parqueadero Torre Norte</strong>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="ubicacion">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Chapinero, Bogotá
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="fecha">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        18 oct. 2026
+                                    </span>
+                                </td>
+                                <td>2:00 p. m. – 5:00 p. m.</td>
+                                <td class="precio">$15.000</td>
+                                <td>
+                                    <span class="estado confirmada">
+                                        <i class="fa-regular fa-calendar-check"></i>
+                                        Confirmada
+                                    </span>
+                                </td>
+                                <td class="acciones">
+                                    <button class="btn-detalles"
+                                        data-detalles="Parqueadero Torre Norte|Chapinero, Bogotá|18 oct. 2026|2:00 p. m. – 5:00 p. m.|$15.000|Confirmada">
+                                        <i class="fa-regular fa-eye"></i>
+                                        Ver detalles
+                                    </button>
+                                    <button class="btn-cancelar"
+                                        data-parqueadero="Parqueadero Torre Norte">
+                                        <i class="fa-regular fa-circle-xmark"></i>
+                                        Cancelar
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr data-estado="pendiente" data-fecha="2026-10-20">
+                                <td>
+                                    <div class="parqueadero">
+                                        <div class="foto-parqueadero foto-tres">
+                                            <i class="fa-solid fa-square-parking"></i>
+                                        </div>
+                                        <strong>Parking Alamos</strong>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="ubicacion">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Engativá, Bogotá
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="fecha">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        20 oct. 2026
+                                    </span>
+                                </td>
+                                <td>6:00 p. m. – 9:00 p. m.</td>
+                                <td class="precio">$18.000</td>
+
+                                <td>
+                                    <span class="estado pendiente">
+                                        <i class="fa-regular fa-clock"></i>
+                                        Pendiente
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="btn-detalles"
+                                        data-detalles="Parking Zona T|Zona T, Bogotá|20 oct. 2026|6:00 p. m. – 9:00 p. m.|$18.000|Pendiente">
+                                        <i class="fa-regular fa-eye"></i>
+                                        Ver detalles
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr data-estado="cancelada" data-fecha="2026-10-05">
+                                <td>
+                                    <div class="parqueadero">
+                                        <div class="foto-parqueadero foto-cuatro">
+                                            <i class="fa-solid fa-square-parking"></i>
+                                        </div>
+                                        <strong>Bulevarniza</strong>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="ubicacion">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Suba, Bogotá
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="fecha">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        05 oct. 2026
+                                    </span>
+                                </td>
+
+                                <td>9:00 a. m. – 11:00 a. m.</td>
+                                <td class="precio">$10.000</td>
+
+                                <td>
+                                    <span class="estado cancelada">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                        Cancelada
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="btn-detalles"
+                                        data-detalles="Parqueadero Plaza 93|Parque de la 93, Bogotá|05 oct. 2026|9:00 a. m. – 11:00 a. m.|$10.000|Cancelada">
+                                        <i class="fa-regular fa-eye"></i>
+                                        Ver detalles
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                    <p id="sinResultados" class="sin-resultados" hidden>
+                        No se encontraron reservas con esos filtros.
+                    </p>
+                </div>
+            </section>
+
+        </main>
+        <footer class="footer">
+            <p>© 2026 Parking-now. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    <dialog id="modalDetalles" class="modal">
+        <div class="modal-contenido">
+            <button class="cerrar-modal" id="cerrarModal"
+                    aria-label="Cerrar ventana">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <i class="fa-regular fa-calendar-check modal-icono"></i>
+            <h2>Detalles de la reserva</h2>
+            <div id="informacionReserva" class="informacion-reserva"></div>
+            <button class="btn-principal" id="aceptarModal">
+                Cerrar
+            </button>
+        </div>
+    </dialog>
+    <script>
+        const busqueda = document.getElementById("busqueda");
+        const filtroEstado = document.getElementById("filtroEstado");
+        const filtroFecha = document.getElementById("filtroFecha");
+        const filas = [...document.querySelectorAll("#listaReservas tr")];
+        const contador = document.getElementById("contadorReservas");
+        const sinResultados = document.getElementById("sinResultados");
+
+        const modal = document.getElementById("modalDetalles");
+        const informacion = document.getElementById("informacionReserva");
+
+        function filtrarReservas() {
+            const texto = busqueda.value.toLowerCase().trim();
+            const estadoSeleccionado = filtroEstado.value;
+            const fechaSeleccionada = filtroFecha.value;
+
+            // Se usa la fecha local para evitar diferencias de zona horaria.
+            const ahora = new Date();
+            const hoy = new Date(
+                ahora.getFullYear(),
+                ahora.getMonth(),
+                ahora.getDate()
+            );
+
+            let visibles = 0;
+
+            filas.forEach(fila => {
+                const contenido = fila.innerText.toLowerCase();
+                const estado = fila.dataset.estado;
+                const fecha = fila.dataset.fecha + "T00:00:00";
+                const fechaReserva = new Date(fecha);
+
+                const coincideTexto = contenido.includes(texto);
+                const coincideEstado =
+                    estadoSeleccionado === "todos" ||
+                    estado === estadoSeleccionado;
+
+                const coincideFecha =
+                    fechaSeleccionada === "todas" ||
+                    (fechaSeleccionada === "futuras" && fechaReserva >= hoy) ||
+                    (fechaSeleccionada === "pasadas" && fechaReserva < hoy);
+
+                const mostrar =
+                    coincideTexto && coincideEstado && coincideFecha;
+
+                fila.hidden = !mostrar;
+
+                if (mostrar) visibles++;
+            });
+
+            contador.textContent = `Mostrando ${visibles} de ${filas.length} reservas de ejemplo`;
+            sinResultados.hidden = visibles !== 0;
+        }
+
+        busqueda.addEventListener("input", filtrarReservas);
+        filtroEstado.addEventListener("change", filtrarReservas);
+        filtroFecha.addEventListener("change", filtrarReservas);
+
+        document.querySelectorAll(".btn-detalles").forEach(boton => {
+            boton.addEventListener("click", () => {
+                const [nombre, ubicacion, fecha, horario, precio, estado] =
+                    boton.dataset.detalles.split("|");
+
+                informacion.innerHTML = "";
+
+                [
+                    ["Parqueadero", nombre],
+                    ["Ubicación", ubicacion],
+                    ["Fecha", fecha],
+                    ["Horario", horario],
+                    ["Total", precio],
+                    ["Estado", estado]
+                ].forEach(([etiqueta, valor]) => {
+                    const fila = document.createElement("p");
+                    const titulo = document.createElement("strong");
+                    const texto = document.createElement("span");
+
+                    titulo.textContent = etiqueta;
+                    texto.textContent = valor;
+
+                    fila.append(titulo, texto);
+                    informacion.appendChild(fila);
+                });
+
+                modal.showModal();
+            });
+        });
+
+        function cerrarModal() {
+            modal.close();
+        }
+
+        document.getElementById("cerrarModal")
+            .addEventListener("click", cerrarModal);
+
+        document.getElementById("aceptarModal")
+            .addEventListener("click", cerrarModal);
+
+        modal.addEventListener("click", evento => {
+            if (evento.target === modal) cerrarModal();
+        });
+
+        document.querySelectorAll(".btn-cancelar").forEach(boton => {
+            boton.addEventListener("click", () => {
+                const nombre = boton.dataset.parqueadero;
+
+                const confirmar = window.confirm(
+                    `¿Deseas cancelar la reserva de "${nombre}"?`
+                );
+
+                if (!confirmar) return;
+
+                const fila = boton.closest("tr");
+                fila.dataset.estado = "cancelada";
+
+                const estado = fila.querySelector(".estado");
+                estado.className = "estado cancelada";
+                estado.replaceChildren();
+
+                const icono = document.createElement("i");
+                icono.className = "fa-solid fa-circle-xmark";
+
+                estado.append(icono, document.createTextNode(" Cancelada"));
+
+                // Evita que la reserva se cancele nuevamente.
+                boton.remove();
+
+                // Actualiza también los detalles de la reserva.
+                fila.querySelector(".btn-detalles").dataset.detalles =
+                    fila.querySelector(".btn-detalles").dataset.detalles
+                        .replace("|Confirmada", "|Cancelada");
+
+                filtrarReservas();
+            });
+        });
+    </script>
+</body>
+</html>
