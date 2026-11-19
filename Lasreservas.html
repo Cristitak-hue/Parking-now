@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mis Reservas | Parking-now</title>
+
+    <link rel="stylesheet" href="/CSS/Lasreservas.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <link rel="icon" type="" href="../images/LOGO1.1.png">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <aside class="sidebar">
+
+         <div class="logo">
+               <a href="/Index.html"><img src="/images/LOGOS.png" alt="Logo Parking-now" height="50px"></a>
+            </div>
+
+        <nav class="menu">
+
+            <a href="/Cajero_conductor.html">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="">
+                <i class="fa-solid fa-car"></i>
+                Parqueadero
+                <i class="fa-solid fa-chevron-right flecha"></i>
+            </a>
+
+            <a href="" class="activo">
+                <i class="fa-regular fa-calendar"></i>
+                Mis Reservas
+            </a>
+
+            <a href="">
+                <i class="fa-solid fa-user"></i>
+                Mi Perfil
+            </a>
+
+            <a href="">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Cerrar Sesión
+            </a>
+
+        </nav>
+
+    </aside>
+    <main class="contenido">
+        <header class="header">
+            <div>
+                <h3>Hola, Cajero Conductor</h3>
+                <p>Bienvenido al panel de administración</p>
+            </div>
+
+            <div class="usuario">
+
+                <div class="notificacion">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+
+                <div class="avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="datos-usuario">
+                    <strong>Juan Pérez</strong>
+                    <span>Cajero Conductor</span>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+        </header>
+        <section class="contenido-principal">
+            <div class="titulo">
+                <div class="icono-titulo">
+                    <i class="fa-regular fa-calendar"></i>
+                </div>
+                <div>
+                    <h1>Mis Reservas</h1>
+                    <p>Consulta el historial y estado de tus reservas</p>
+                </div>
+            </div>
+            <div class="estadisticas">
+
+                <div class="tarjeta">
+
+                    <div class="icono azul">
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+
+                    <div>
+                        <h2><?= $total ?></h2>
+                        <p>Total de reservas</p>
+                    </div>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <div class="icono verde">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <div>
+                        <h2><?= $activas ?></h2>
+                        <p>Reservas activas</p>
+                    </div>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <div class="icono celeste">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <h2><?= $pendientes ?></h2>
+                        <p>Reservas pendientes</p>
+                    </div>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <div class="icono turquesa">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                    </div>
+
+                    <div>
+                        <h2><?= $finalizadas ?></h2>
+                        <p>Reservas finalizadas</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLA DE RESERVAS -->
+
+            <div class="contenedor-tabla">
+
+                <!-- BUSCADOR Y FILTRO -->
+
+                <div class="herramientas">
+
+                    <div class="buscador">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="buscar"
+                            placeholder="Buscar por placa, número de reserva..."
+                        >
+
+                    </div>
+
+
+                    <div class="filtro">
+
+                        <i class="fa-solid fa-filter"></i>
+
+                        <select id="filtroEstado">
+
+                            <option value="Todos">Todos los estados</option>
+                            <option value="Activa">Activas</option>
+                            <option value="Pendiente">Pendientes</option>
+                            <option value="Finalizada">Finalizadas</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+                <div class="tabla-responsive">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th># Reserva</th>
+                                <th>Vehículo</th>
+                                <th>Fecha y Hora</th>
+                                <th>Ubicación</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="tablaReservas">
+
+                            <?php foreach ($reservas as $reserva): ?>
+
+                                <tr>
+
+                                    <td>
+                                        <?= htmlspecialchars($reserva["id"]) ?>
+                                    </td>
+
+                                    <td>
+                                        <i class="fa-solid fa-car icono-carro"></i>
+                                        <?= htmlspecialchars($reserva["vehiculo"]) ?>
+                                    </td>
+
+                                    <td>
+                                        <i class="fa-regular fa-calendar icono-fecha"></i>
+                                        <?= htmlspecialchars($reserva["fecha"]) ?>
+                                        - <?= htmlspecialchars($reserva["hora"]) ?>
+                                    </td>
+
+                                    <td>
+                                        <i class="fa-solid fa-location-dot icono-ubicacion"></i>
+                                        <?= htmlspecialchars($reserva["ubicacion"]) ?>
+                                    </td>
+
+                                    <td>
+
+                                        <span class="estado <?= strtolower($reserva["estado"]) ?>">
+
+                                            <?php if ($reserva["estado"] === "Activa"): ?>
+
+                                                <i class="fa-solid fa-circle-check"></i>
+
+                                            <?php elseif ($reserva["estado"] === "Pendiente"): ?>
+
+                                                <i class="fa-solid fa-clock"></i>
+
+                                            <?php else: ?>
+
+                                                <i class="fa-solid fa-circle-check"></i>
+
+                                            <?php endif; ?>
+
+                                            <?= htmlspecialchars($reserva["estado"]) ?>
+
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <button
+                                            class="btn-ver"
+                                            onclick="verReserva(
+                                            )"
+                                        >
+
+                                            <i class="fa-regular fa-eye"></i>
+                                            Ver
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+                            <?php endforeach; ?>
+
+                        </tbody>
+
+                    </table>
+
+                    <p id="sinResultados" class="sin-resultados">
+                        No se encontraron reservas.
+                    </p>
+
+                </div>
+
+
+                <!-- PIE DE TABLA -->
+
+                <div class="pie-tabla">
+
+                    <p id="contador">
+                        Mostrando <?= $total ?> reservas
+                    </p>
+
+                    <div class="paginacion">
+
+                        <button disabled>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <button class="pagina-activa">1</button>
+
+                        <button disabled>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+<footer id="contacto">
+
+        <div class="contenido-footer">
+
+            <div class="footer-logo">
+
+                <img src="/images/Logo_parkingnow.png" alt="Parking-now">
+
+                <p>
+                    Estaciona sin complicaciones.
+                </p>
+
+            </div>
+
+
+            <div class="footer-columna">
+
+                <h3>
+                    Parking-now
+                </h3>
+
+                <a href="#">
+                    Inicio
+                </a>
+
+                <a href="#servicios">
+                    Servicios
+                </a>
+
+                <a href="#tarifas">
+                    Tarifas
+                </a>
+
+            </div>
+
+
+            <div class="footer-columna">
+
+                <h3>
+                    Ayuda
+                </h3>
+
+                <a href="#">
+                    Preguntas frecuentes
+                </a>
+
+                <a href="#">
+                    Contacto
+                </a>
+
+                <a href="#">
+                    PQRS
+                </a>
+
+            </div>
+
+
+            <div class="footer-columna">
+
+                <h3>
+                    Síguenos
+                </h3>
+
+                <div class="redes">
+
+                    <a href="https://www.instagram.com/parking.nowoficial/">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.facebook.com/profile.php?fb_profile_edit_entry_point=%7B%22click_point%22%3A%22edit_profile_button%22%2C%22feature%22%3A%22profile_header%22%7D&id=61594867521056&sk=about">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+<script src="js/mis_reservas.js"></script>
+
+</body>
+</html> 
